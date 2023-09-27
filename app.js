@@ -272,6 +272,21 @@ console.log(myFriends);
 */
 
 
+//----Joining Arrays----//
+
+
+/*
+let letters = ["A" , "B" , "c"];
+let words = ["Apple" , "Ball" , "Cat"];
+let phrases = ["I had a day in the sun" , "Piece of cake"];
+
+let Combination = letters.concat(words , phrases);
+console.log(Combination , "Jameel");
+console.log(words.join());
+console.log(words.join(" @ "));
+*/
+
+
 
 
 
