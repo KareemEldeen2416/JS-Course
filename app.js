@@ -293,3 +293,106 @@ console.log(words.join(" @ "));
 
 
 
+//----For loop----//
+
+/*
+mainLoop: for(let i = 1 ; i <=10 ; i++){
+    console.log(`Main Loop ${i}`);
+    nestedLoop:for(let k = 1  ; k <= 5 ; k++){
+        console.log(`Nested Loop ${i * k}`);
+        if(i === 5){
+            break mainLoop;
+        }
+    }
+}
+*/
+
+
+
+//----While Loop----//
+
+/*
+let index = 0 ; 
+while(index < 10){
+console.log(index + 1);
+index++;
+}
+*/
+
+
+
+
+
+//----Do-while Loop----//
+
+/*
+let index =  0 ;
+do{
+console.log(index + 1 );
+index++;
+}while(index < 12);
+*/
+
+
+
+
+
+//----Function Intro----//
+
+
+/*
+function sayHello (userName){
+    console.log(`Welcome ${userName} to our new world`);
+}
+sayHello("Karamela");
+
+function add(num1 , num2){
+    return num1 + num2;
+}
+console.log(add(2,4));
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----Function default parameters----//
+
+
+
+/*
+function sayHello(name , age){
+    age = age || "Unknown";
+    return `Hello ${name}, Your age is ${age}`;
+}
+
+console.log(sayHello("Suzume"));
+console.log(sayHello("Mitsuha" , 20));
+*/
+
+/*
+function sayHello(name = "Unknown" , age = "Unknown"){
+    return `Hello ${name}, Your name is ${age}`;
+}
+
+console.log(sayHello("Taki kun"));
+console.log(sayHello("Edogawa" , 9));
+console.log(sayHello());
+*/
+
+
+
+
+
+
+
+
+
