@@ -392,7 +392,113 @@ console.log(sayHello());
 
 
 
+//----Rest parameters----//
 
 
+/*
+function calc(...numbers){
+    console.log(Array.isArray(numbers));
+    for(let i = 0 ; i < numbers.length ; i++){
+        console.log(numbers[i]);
+    }
+}
+
+console.log(calc(1,3,4,5));
+*/
+
+
+
+
+
+
+
+//----Anonymous Function----//
+
+
+/*
+let calculator = function(num1 , num2){
+    return num1 + num2; 
+}
+console.log(calculator(1,2));
+
+setTimeout(() =>{
+    console.log("Good");
+},2000);
+*/
+
+
+//----challenge----//
+
+/*
+console.log("New Challenge");
+
+function Message (arg1 , arg2  , arg3){
+    
+    let name = (typeof arg1 === "string")? arg1 : (typeof arg2 === "string")? arg2 : arg3;
+    let age = (typeof arg1 === "number")? arg1 : (typeof arg2 === "number")? arg2 : arg3;
+    let bool = (typeof arg1 === "boolean")? arg1 : (typeof arg2 === "boolean")? arg2 : arg3;
+    console.log(`Your name is ${name}, and your age is ${age}. ${(bool === true)? "you are with us" : "you're not with us"}`);
+
+}
+
+Message("Kareem" , 23 , false);
+Message(true , "Osama" , 12);
+Message(10 , true , "Saif");
+Message(20, "Mohammed" , false);
+Message(true , 13 , "Taki");
+Message("Conan" , true , 9);
+*/
+
+
+
+
+
+
+//----Return Nested function----//
+
+
+//Example 1
+/*
+function sayHello(firstName , lastName){
+    let Message = "Hello";
+    function concatenate(){
+        Message = `${Message} ${firstName} ${lastName}`;
+        
+    }
+
+    concatenate();
+    return Message;
+}
+console.log(sayHello("Kareem" , "Ahmed"));
+*/
+
+
+//Example 2
+/*
+function sayHello(firstName , lastName){
+    let Message = "Hello";
+    function concatenate(){
+        return `${Message} ${firstName} ${lastName}`;
+    }
+    return concatenate();
+}
+console.log(sayHello("Kareem" , "Karamela"));
+*/
+
+
+
+
+
+
+
+//----Arrow Function----//
+
+let result = ()=>{
+    return 40;
+}
+console.log(result());
+
+let print = (num)=>num;
+console.log(print());
 
 
