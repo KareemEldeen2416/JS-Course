@@ -707,3 +707,70 @@ function sayHello(){
 sayHello();
 */
 
+
+
+
+//----Create object with create method----//
+
+
+/*
+let user = {
+    age: 40 , 
+    doubleAge: function(){
+        return this.age * 2;
+    },
+};
+
+console.log(user);
+console.log(user.age);
+console.log(user.doubleAge());
+
+let obj = Object.create({});
+obj.val = 100 ;
+console.log(obj);
+console.log(obj.val);
+
+
+let copyObj = Object.create(user);
+
+copyObj.age = 30;
+console.log(copyObj);
+console.log(copyObj.age);
+console.log(copyObj.doubleAge());
+*/
+
+
+
+
+
+
+//----Create object with assign method----//
+
+
+let o1 = {
+    prop1 : 11,
+    meth1 : function() {
+        return this.prop1;
+    },
+};
+
+let o2 = {
+    prop2 : 2,
+    meth2 : function() {
+        return this.prop2;
+    },
+};
+
+let targetObject = {
+    prop1 : 13,
+    prop3 : 3,
+};
+
+
+let finalObject = Object.assign(targetObject, o1 , o2);
+console.log(finalObject);
+finalObject.prop1 = 30;
+console.log(finalObject);
+
+let newObject = Object.assign({} , o1 , {prop5 : 5} );
+console.log(newObject);
