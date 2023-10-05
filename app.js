@@ -493,6 +493,7 @@ console.log(sayHello("Kareem" , "Karamela"));
 
 //----Arrow Function----//
 
+/*
 let result = ()=>{
     return 40;
 }
@@ -500,5 +501,209 @@ console.log(result());
 
 let print = (num)=>num;
 console.log(print());
+*/
 
+
+
+
+
+
+//----Higher order function----//
+
+
+
+/*
+let myNums = [1,2,3,4,5];
+
+****First way****
+
+let addSelf = myNums.map(function(element , index, arr){
+  console.log(`Current Element ${element}`);
+  console.log(`Current Index ${index}`);
+  console.log(`Array ${arr}`);
+  return element + element;
+},10);
+
+
+****Second way****
+
+let addSelf = myNums.map  ( (element)=>element +element );
+console.log(addSelf);
+
+****Third way****
+
+function addition (ele){
+    return ele + ele;
+}
+let addSelf = myNums.map(addition);
+console.log(addSelf);
+*/
+
+
+
+
+
+
+//----Higher order function - Filter ----//
+
+
+/*
+let friends = ["Osama" , "Kamal" , "Kamel" , "Kun" , "Zero"];
+let numbers = [1,2,3,4];
+let filteredFriends = friends.filter(function(element){
+    return element.startsWith("K");
+});
+let evenNumbers = numbers.filter(function(el){
+    return el % 2 === 0 ;
+});
+console.log(filteredFriends);
+console.log(evenNumbers);
+*/
+
+
+//----Higher order function - Reduce ----//
+
+
+/*
+let nums = [10,20,30,40];
+let reducedArray = nums.reduce(function(acc,currentElement , index, arr){
+     console.log(`Accumulator is ${acc}`);
+     console.log(`Current Element is ${currentElement}`);
+     console.log(`Index is ${index}`);
+     console.log(`Arrays is ${arr}`);
+    return acc + currentElement;
+} , 5);
+*/
+
+
+
+//----For each----//
+
+
+
+/*
+let allList = document.querySelectorAll("ul li");
+let allDivs = document.querySelectorAll(".content div");
+
+allList.forEach(function(ele){
+
+
+    ele.onclick = function () {
+
+      console.log(this);
+      console.log("###################");
+      console.log(ele.innerHTML);
+      allList.forEach( function(element){
+        element.classList.remove("active");
+      });
+      this.classList.add("active");
+
+      //Hide all divs
+      allDivs.forEach(function (ele){
+        ele.style.display = "none";
+      });
+      
+
+    };
+
+});
+*/
+
+
+
+
+//----Object Introduction----//
+
+
+/*
+let myVar = "nationality";
+let user = {
+    // properties
+    nationality : "Russian",
+    theName : "Kareem",
+    theAge: 23,
+    "id of" : "#987",
+    // Methods
+    sayHello: function(){
+        console.log(`Hello`);
+    }
+};
+console.log(user.theName);
+console.log(user.theAge);
+console.log(user["id of"]);
+console.log(user.nationality);
+console.log(user[myVar]);
+*/
+
+
+
+
+
+
+//----Nested Object----//
+
+
+/*
+let user = {
+name : "Karamela",
+age: 30,
+skills: ["HTML" , "CSS" , "JavaScript"],
+available: true,
+addresses: {
+    ksa: "Riyadh",
+    egypt: {
+        one : "Cairo",
+        two: "Luxor",
+    }
+},
+checkAv : function(value){
+     return value === true ? true : false;
+}
+}
+
+console.log(user.addresses.egypt.one);
+console.log(user.addresses.ksa);
+console.log(user.checkAv(user.available));
+console.log(user.skills[0]);
+console.log(user.addresses);
+*/
+
+
+
+
+
+//----Create object with new keyword----//
+
+
+/*
+let user = new Object({
+    age : 20,
+});
+console.log(user);
+user.age = 12;
+user["country"]= "Sham";
+user.sayHello = function(){
+    console.log(`Hello`);
+}
+console.log(user);
+*/
+
+
+
+
+
+//----this keyword----//
+
+
+/*
+console.log(this);
+console.log(this === window);
+myVar = 100;
+console.log(window.myVar);
+console.log(this.myVar);
+function sayHello(){
+    console.log(this);
+}
+sayHello();
+*/
 
