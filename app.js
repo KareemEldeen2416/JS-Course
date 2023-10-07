@@ -747,6 +747,7 @@ console.log(copyObj.doubleAge());
 //----Create object with assign method----//
 
 
+/*
 let o1 = {
     prop1 : 11,
     meth1 : function() {
@@ -774,3 +775,101 @@ console.log(finalObject);
 
 let newObject = Object.assign({} , o1 , {prop5 : 5} );
 console.log(newObject);
+*/
+
+
+
+
+
+//----DOM, and select elements----//
+
+
+/*
+let myIdElement = document.getElementById("my-div");
+console.log(myIdElement);
+let myTagElement = document.getElementsByTagName("li");
+console.log(myTagElement);
+myTagElement[0].innerHTML = "Edited element by JavaScript";
+let myClassElement = document.getElementsByClassName("active");
+let myElement = document.querySelector("div");
+console.log(myElement);
+myElement.innerHTML = "My div";
+let myElements = document.querySelectorAll("div");
+console.log(myElements[0]);
+
+console.log(document.title);
+console.log(document.body);
+console.log(document.forms);
+console.log(document.images);
+console.log(document.links);
+*/
+
+
+
+
+//----Get Set elements content and attributes----//
+
+
+/*
+let myElement = document.querySelector("div");
+console.log(myElement.innerHTML);
+console.log(myElement.textContent);
+myElement.innerHTML = "Text from <h3>JS</h3> file";
+myElement.textContent = "This is added text";
+
+document.images[0].alt = "Picture";
+document.images[0].title = "Picture Title";
+document.images[0].className = "active";
+document.links[0].href = "https://www.google.com";
+
+console.log(document.links[0].getAttribute("class"));
+document.links[0].setAttribute("class" , "kemo");
+*/
+
+
+
+
+
+
+//----Check Attributes----//
+
+
+/*
+console.log(document.getElementsByTagName("div")[0].attributes);
+let myDiv = document.getElementsByTagName("div")[0];
+if(myDiv.hasAttribute("class")){
+    console.log(true);
+    if(myDiv.getAttribute("class") === ""){
+        myDiv.removeAttribute("class");
+    }else{
+        myDiv.setAttribute("class" , "newClass");
+    }
+}else{
+    console.log(false);
+}
+console.log(myDiv.hasAttributes());
+*/
+
+
+
+//----Create, and append child----//
+
+
+/*
+let myElement = document.createElement("div");
+let myAttribute = document.createAttribute("data-custom");
+let myText = document.createTextNode("Product One");
+let myComment = document.createComment("This is a comment");
+myElement.className = "active";
+myElement.setAttributeNode(myAttribute);
+myElement.setAttribute("data-test" , "hamada");
+myElement.appendChild(myText);
+myElement.appendChild(myComment);
+document.body.appendChild(myElement);
+console.log(myElement);
+*/
+
+
+
+
+
