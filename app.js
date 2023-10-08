@@ -873,3 +873,116 @@ console.log(myElement);
 
 
 
+//----Deal with children----//
+
+
+/*
+let myElement = document.querySelector("div");
+
+console.log(myElement);
+console.log(myElement.children);
+console.log(myElement.children[0]);
+console.log(myElement.childNodes);
+console.log(myElement.firstChild);
+console.log(myElement.lastChild);
+console.log(myElement.firstElementChild);
+console.log(myElement.lastElementChild);
+*/
+
+
+
+
+
+//----DOM Events----//
+
+/*
+let myElement = document.querySelector("Button");
+let myForm = document.querySelector("form");
+let textBox = document.getElementById("name");
+myElement.onclick = function(){
+  console.log("Hello From JS File");
+};
+myElement.oncontextmenu = function(){console.log("Context Event")};
+myElement.onmouseenter = function(){console.log("Mouse Event")};
+myElement.onmouseleave = function(){console.log("Mouse Leave")};
+myElement.onload = function(){console.log("Load Event")};
+window.onscroll = function(){console.log("Scroll Event")};
+window.onresize = function(){console.log("Resize Event")};
+textBox.onfocus = function(){console.log("Focus Event")};
+myForm.onsubmit = function(){console.log("Submit Event")};
+*/
+
+
+
+
+
+//----Validate form, and prevent default----//
+
+
+
+/*
+let userName = document.querySelector("[name = 'username']");
+let age = document.querySelector("[name = 'age']");
+
+
+document.forms[0].onsubmit = function(event){
+    let userValid = false;
+    let ageValid = false;
+
+    console.log(userName.value);
+    console.log(userName.value.length);
+
+    if(userName.value !== "" && userName.value.length<10){
+        console.log("Valid");
+        userValid = true; 
+    }
+
+    if(age.value !== ""){
+        ageValid = true;
+    }
+
+    if(userValid === false || ageValid === false){
+        event.preventDefault();
+    }
+    
+};
+document.links[0].onclick = function(event){
+    console.log(event);
+    event.preventDefault();
+};
+*/
+
+
+
+
+//----Event simulation - Click focus blur----//
+
+
+/*
+let ageField = document.querySelector("[name = 'age']");
+let userName = document.querySelector("[name = 'username']");
+window.onload = function(){
+    ageField.focus();
+};
+
+userName.onblur = function(){
+    document.links[0].click();
+};
+*/
+
+
+
+
+//----Class list object, and methods----//
+
+
+let myElement = document.querySelector("[name = 'username']");
+console.log(myElement.classList);
+console.log(myElement.classList.length);
+console.log(myElement.classList.contains("one"));
+console.log(myElement.classList.item(1));
+myElement.classList.add("active");
+myElement.classList.remove("one");
+console.log(myElement.classList);
+myElement.classList.toggle("one");
+console.log(myElement.classList);
