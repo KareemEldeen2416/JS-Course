@@ -976,6 +976,7 @@ userName.onblur = function(){
 //----Class list object, and methods----//
 
 
+/*
 let myElement = document.querySelector("[name = 'username']");
 console.log(myElement.classList);
 console.log(myElement.classList.length);
@@ -986,3 +987,149 @@ myElement.classList.remove("one");
 console.log(myElement.classList);
 myElement.classList.toggle("one");
 console.log(myElement.classList);
+*/
+
+
+
+
+//----CSS styling, and stylesheets----//
+
+/*
+let element = document.getElementById("my-div");
+element.style.color = "blue";
+element.style.cssText = "font-weight : bold; color : green; font-size : 20pt;";
+element.style.removeProperty("color");
+element.style.setProperty("background-color" , "blue");
+element.style.setProperty("color" , "white");
+
+console.log(document.styleSheets[0].cssRules[0].style.setProperty("background-color" , "white"));
+console.log(document.styleSheets[0].cssRules[0].style.removeProperty("color"));
+*/
+
+
+
+
+
+//----Before, After, Prepend, Append, Remove----//
+
+/*
+let element = document.getElementById("my-div");
+let createdP = document.createElement("p");
+createdP.innerHTML = "Paragraph";
+createdP.style.backgroundColor = "red";
+element.before("Hello From JS");
+element.before(createdP);
+element.after("Barcelona");
+element.after(createdP);
+element.prepend("SAKA");
+element.prepend(createdP);
+element.append("Aresenal");
+element.append(createdP);
+element.remove();
+*/
+
+
+
+
+
+//----DOM Traversing----//
+
+
+/*
+let span = document.querySelector(".two");
+console.log(span);
+console.log(span.nextSibling);
+console.log(span.nextElementSibling);
+console.log(span.previousSibling);
+console.log(span.previousElementSibling);
+console.log(span.parentElement);
+span.onclick = function(){
+    span.parentElement.style.backgroundColor = "blue";
+    span.parentElement.style.color = "white";
+};
+*/
+
+
+
+
+//----Cloning----//
+
+/*
+let myDiv = document.querySelector("#my-div");
+let myItem = document.querySelector(".active").cloneNode(true);
+myDiv.appendChild(myItem);
+*/
+
+
+
+
+
+//----Add event listener----//
+
+
+
+/*
+let myButton = document.querySelector("[type = 'submit'");
+console.log(myButton);
+myButton.addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("A click from an event listener");
+});
+
+function printer (){
+    console.log("A click from a function added to event listener");
+}
+myButton.addEventListener("click" , printer);
+myButton.addEventListener("click" , function(){
+    let myDiv = document.querySelector("#my-div");
+    let newDiv = myDiv.cloneNode(true);
+    newDiv.addEventListener("click" , function(){
+        console.log("I am a cloned division");
+    });
+    document.body.appendChild(newDiv);
+});
+*/
+
+
+
+
+
+
+
+//----What is BOM----//
+
+/*
+window.console.log("from window object");
+window.document.title = "JS-Course";
+*/
+
+
+
+
+//Alert, Confirm, Prompt----//
+
+
+/*
+window.alert("Wonderful message");
+console.log("Test");
+let confirmMessage = window.confirm("Do you confirm it?");
+if(confirmMessage){
+    console.log("Item deleted");
+}else{
+    console.log("Item not deleted");
+}
+
+let promptMessage = window.prompt("Is it suitable?" , "Default message");
+console.log(promptMessage);
+*/
+
+
+
+
+
+//----setTimeout, and clearTimeout----//
+
+
+
+
+
