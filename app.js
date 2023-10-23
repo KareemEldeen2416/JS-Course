@@ -1131,5 +1131,327 @@ console.log(promptMessage);
 
 
 
+/*
+let counter = setTimeout(function(){
+    console.log("Printed message after 3 seconds");
+},3000);
+console.log(counter);
+
+function printMessage (name , age){
+    console.log(`A message from ${name}, his age is ${age}`);
+}
+
+setTimeout(printMessage, 3000 , "Kareem" , 13);
+
+let btn = document.querySelector("[type = 'submit']");
+console.log(btn);
+btn.addEventListener("click" , function(event){
+    event.preventDefault();
+    clearTimeout(counter);
+});
+*/
 
 
+
+
+
+//----setInterval, and clearInterval----//
+
+
+/*
+let element = document.querySelector(".active");
+let count = 1;
+console.log(element);
+let counter = setInterval(function(){
+    element.innerHTML = `${count}`;
+    count++;
+    if(count === 11){
+        clearInterval(counter);
+    }
+},1000);
+*/
+
+
+
+
+
+
+
+//----Window location object----//
+
+
+/*
+console.log(window.location);
+ console.log(window.location.href);
+// window.location.href = "https://google.com";
+//watch again first 4 mins.
+console.log(window.location.host);
+console.log(window.location.hostname);
+console.log(window.location.protocol);
+console.log(window.location.hash);
+window.location.reload();
+window.location.replace("https://google.com");
+window.location.assign("https://google.com");
+*/
+
+
+
+
+
+
+
+//----window open, and close----//
+
+
+
+/*
+setTimeout(function(){
+    window.open("https://www.google.com","_blank","width=400,height=400,left=200,top=100");
+},3000);
+
+setTimeout(function(){
+    window.close();
+},2000);
+*/
+
+
+
+
+
+
+//----Window history object----//
+
+
+
+/*
+console.log(window.history);
+console.log(history.length);
+history.back();
+history.go(-1);
+history.forward();
+*/
+
+
+
+//----Scroll, ScrollTo, ScrollBy, Focus, Print, and Stop----//
+
+
+
+/*
+window.stop();
+window.print();
+let myNewWindow = window.open("https://google.com","","width=500,height=500");
+myNewWindow.focus();
+myNewWindow.close();
+window.scrollTo(5000,5000);
+window.scrollBy(30,100);
+window.scrollTo({
+    left:500,
+    top:1500,
+    behavior: "smooth"
+});
+*/
+
+
+
+
+
+//----Local storage----//
+
+
+
+/*
+//SET
+window.localStorage.setItem("color","red");
+window.localStorage.fontWeight = "Bold";
+window.localStorage["fontSize"] = "20px";
+
+//GET
+console.log(window.localStorage.getItem("color"));
+console.log(window.localStorage.color);
+console.log(window.localStorage["color"]);
+
+
+//REMOVE ONE
+window.localStorage.removeItem("color");
+
+
+//REMOVE ALL
+window.localStorage.clear();
+
+//GET KEY
+console.log(window.localStorage.key(0));
+
+//SET COLOR IN THE PAGE
+document.body.style.backgroundColor = window.localStorage.color;
+
+console.log(typeof window.localStorage);
+console.log(window.localStorage);
+*/
+
+
+
+
+
+//----Session storage----//
+
+/*
+window.localStorage.setItem("color" , "red");
+window.sessionStorage.setItem("color" , "blue");
+*/
+
+
+
+
+
+
+
+//----Destructuring Arrays----//
+
+
+
+/*
+let v1 = 1 ,v2 =2 , v3 =3, v4=4;
+let myFriends = ["Saif" , "Hamada" , "Taki" , "Mitsuha"];
+let [a,b,c,d,e = "Suzume" ] = myFriends;
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+[v1,v2,v3] = myFriends;
+console.log(v1);
+console.log(v2);
+console.log(v3);
+console.log(v4);
+let [w , , r , t] = myFriends;
+console.log(w + " " + r + " " + t);
+*/
+
+
+
+
+//----Destructuring Arrays pt2----//
+
+
+/*
+let myFriends = ["Conan" , "Ran" , "Mori" , ["Taki" , "Mitsuha",["Suzume" , "Suzuki"]]];
+let [,,,[a,,[,b]]] = myFriends;
+console.log(a);
+console.log(b);
+*/
+
+
+
+
+//----Destructuring Arrays pt3----//
+
+/*
+let book = "Video";
+let video = "Book";
+let stash = book;
+book = video;
+video = stash;
+console.log(book);
+console.log(video);
+
+
+[book , video] = [video , book];
+*/
+
+
+
+//----Destructuring object----//
+
+
+/*
+const user = {
+    theName : "Kareem",
+    theAge : 14,
+    theTitle : "Teacher",
+    theCountry : "Saudi Arabia",
+};
+
+
+let {theName , theAge, theTitle ,theCountry} = user;
+console.log(theName);
+console.log(theAge);
+console.log(theTitle);
+console.log(theCountry);
+*/
+ 
+
+
+
+
+
+//----Destructuring object pt2----//
+
+
+
+/*
+const user = {
+    theName : "Kareem",
+    theAge : 14,
+    theTitle : "Teacher",
+    theCountry : "Saudi Arabia",
+    skills: {
+        reading: "Arabic",
+        writing: "English",
+
+    }
+};
+
+let {theName : n ,
+     theAge : a ,
+     theTitle : t ,
+     theCountry : c ,
+     theColor = "Blue",
+     skills : {reading ,writing}
+    } = user;
+console.log(a,n ,t,c);
+console.log(theColor);
+console.log(reading);
+console.log(writing);
+
+const {reading: skillOne , writing: skillTwo} = user.skills;
+console.log(skillOne , skillTwo); 
+*/
+
+
+
+
+
+
+
+//----Destructurin Function parameters----//
+
+
+/*
+const user = {
+    theName : "Kareem",
+    theAge : 14,
+    theTitle : "Teacher",
+    theCountry : "Saudi Arabia",
+    skills: {
+        reading: "Arabic",
+        writing: "English",
+
+    }
+};
+
+showDetails(user);
+
+function showDetails(obj){
+    console.log(`Your name is${obj.theName}`);
+    console.log(`Your age is${obj.theAge}`);
+    console.log(`Your title is${obj.theTitle}`);
+
+}
+
+function showDetails({theName : n, theAge, theTitle} = user){
+    console.log(`Your name is${n}`);
+    console.log(`Your age is${theAge}`);
+    console.log(`Your title is${theTitle}`);
+}
+*/
