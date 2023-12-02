@@ -10,8 +10,38 @@
 
 // console.log("Log");
 // console.error("Error");
-// console.table([ "Hamada" , "Semem"  ,"Zero" ]);
+//console.table([ "Hamada" , "Semem"  ,"Zero" ]);
 // console.log("Normal %cmessage" , "color:blue;");
+
+// console.group("Parent1");
+// console.log("Message 1");
+// console.log("Message 2");
+// console.group("Child1");
+// console.log("Message 1");
+// console.log("Message 2");
+// console.group("Grand child1");
+// console.log("Message 1");
+// console.log("Message 2");
+// console.groupEnd();
+// console.groupEnd();
+// console.groupEnd();
+// console.group("Parent2");
+// console.log("Message 1");
+// console.log("Message 2");
+// console.groupEnd();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -69,6 +99,15 @@ console.log(Number.isInteger(100));
 console.log(Number.isNaN("100 / osama"));
 */
 
+// let num = 3;
+// console.log(num + num);
+// console.log(true +true + true+ num);
+// console.log(+`${num + num}`);
+// console.log(+"3" + num);
+// console.log(+(num.toString())+ +(num.toString()));
+// console.log(Number.isInteger(num) + Number.isInteger(num) + true + num);
+
+
 
 
 
@@ -87,6 +126,7 @@ console.log(Math.pow(2,4));
 console.log(Math.random());
 console.log(Math.trunck(99.5364));
 */
+
 
 
 
@@ -123,6 +163,8 @@ console.log(theName.startsWith("El", 3));
 console.log(theName.endsWith("o"));
 console.log(theName.endsWith("k" , 8));
 */
+
+
 
 
 
@@ -200,6 +242,9 @@ switch(day){
 
 
 
+
+
+
 //----Array----//
 
 /*
@@ -216,21 +261,21 @@ console.log(myFriends.length);
 
 //----Add, and remove from array----//
 
-/*
-let myFriends = ["Ahmed" , "Salah" , "Omar"];
-myFriends.unshift("Osama" , "Saif");
-console.log(myFriends);
-myFriends.push("Suzume" , "Mitsuha");
-console.log(myFriends);
-myFriends.shift();
-console.log(myFriends);
-myFriends.pop();
-console.log(myFriends);
-let lastElement = myFriends.pop();
-console.log(lastElement);
-let firstElement = myFriends.shift();
-console.log(firstElement);
-*/
+
+// let myFriends = ["Ahmed" , "Salah" , "Omar"];
+// myFriends.unshift("Osama" , "Saif");
+// console.log(myFriends);
+// myFriends.push("Suzume" , "Mitsuha");
+// console.log(myFriends);
+// myFriends.shift();
+// console.log(myFriends);
+// myFriends.pop();
+// console.log(myFriends);
+// let lastElement = myFriends.pop();
+// console.log(lastElement);
+// let firstElement = myFriends.shift();
+// console.log(firstElement);
+
 
 
 //----Searching Array----//
@@ -285,10 +330,6 @@ console.log(Combination , "Jameel");
 console.log(words.join());
 console.log(words.join(" @ "));
 */
-
-
-
-
 
 
 
@@ -350,17 +391,7 @@ function add(num1 , num2){
     return num1 + num2;
 }
 console.log(add(2,4));
-*/
-
-
-
-
-
-
-
-
-
-
+*/                       
 
 
 
@@ -405,7 +436,6 @@ function calc(...numbers){
 
 console.log(calc(1,3,4,5));
 */
-
 
 
 
@@ -505,9 +535,6 @@ console.log(print());
 
 
 
-
-
-
 //----Higher order function----//
 
 
@@ -564,17 +591,18 @@ console.log(evenNumbers);
 //----Higher order function - Reduce ----//
 
 
-/*
-let nums = [10,20,30,40];
-let reducedArray = nums.reduce(function(acc,currentElement , index, arr){
-     console.log(`Accumulator is ${acc}`);
-     console.log(`Current Element is ${currentElement}`);
-     console.log(`Index is ${index}`);
-     console.log(`Arrays is ${arr}`);
-    return acc + currentElement;
-} , 5);
-*/
 
+// let nums = [10,20,30,40];
+// let reducedArray = nums.reduce(function(acc,currentElement , index, arr){
+//      console.log(`Accumulator is ${acc}`);
+//      console.log(`Current Element is ${currentElement}`);
+//      console.log(`Index is ${index}`);
+//      console.log(`Arrays is ${arr}`);
+//     return acc + currentElement;
+// } , 5);
+
+// console.log("$$$$$$$$$$$$$$$$$$$$");
+// console.log(reducedArray);
 
 
 //----For each----//
@@ -690,8 +718,6 @@ console.log(user);
 
 
 
-
-
 //----this keyword----//
 
 
@@ -776,6 +802,53 @@ console.log(finalObject);
 let newObject = Object.assign({} , o1 , {prop5 : 5} );
 console.log(newObject);
 */
+// The Object To Work With
+// let myFavGames = {
+//     "Trinity Universe": {
+//       publisher: "NIS America",
+//       price: 40,
+//     },
+//     "Titan Quest": {
+//       publisher: "THQ",
+//       bestThree: {
+//         one: "Immortal Throne",
+//         two: "Ragnarök",
+//         three: "Atlantis",
+//       },
+//       price: 50,
+//     },
+//     YS: {
+//       publisher: "Falcom",
+//       bestThree: {
+//         one: "Oath in Felghana",
+//         two: "Ark Of Napishtim",
+//         three: "origin",
+//       },
+//       price: 40,
+//     },
+//   };
+  
+  // Code One => How To Get Object Length ?
+//   let objectLength = 5;
+  
+//   for (let i = 0; i < objectLength; i++) {
+//     console.log(`The Game Name Is ???????`);
+//     console.log(`The Publisher Is ???????`);
+//     console.log(`The Price Is ???????`);
+  
+//     // Check If Nested Object Has Property (bestThree)
+//     if (???????) {
+//       console.log("- Game Has Releases");
+//       console.log(`First => ???????`);
+//       console.log(`Second => ???????`);
+//       console.log(`Third => ???????`);
+//     }
+//     console.log("#".repeat(20));
+//   }
+
+
+
+
 
 
 
@@ -804,6 +877,14 @@ console.log(document.images);
 console.log(document.links);
 */
 
+// let myInput = document.querySelector("[name = 'dollar']");
+// let myOutput = document.querySelector(".result");
+// const dollarValue = 15.6;
+// myInput.onclick = ()=>{
+//     let inputValue = myInput.value;
+//     let conversion = dollarValue * inputValue;
+//     myOutput.innerHTML = `{${inputValue}} USD Dollar = {${conversion}} EGP`;
+// };
 
 
 
@@ -829,8 +910,6 @@ document.links[0].setAttribute("class" , "kemo");
 
 
 
-
-
 //----Check Attributes----//
 
 
@@ -852,6 +931,10 @@ console.log(myDiv.hasAttributes());
 
 
 
+
+
+
+
 //----Create, and append child----//
 
 
@@ -868,6 +951,8 @@ myElement.appendChild(myComment);
 document.body.appendChild(myElement);
 console.log(myElement);
 */
+
+
 
 
 
@@ -900,7 +985,7 @@ let myElement = document.querySelector("Button");
 let myForm = document.querySelector("form");
 let textBox = document.getElementById("name");
 myElement.onclick = function(){
-  console.log("Hello From JS File");
+    console.log("Hello From JS File");
 };
 myElement.oncontextmenu = function(){console.log("Context Event")};
 myElement.onmouseenter = function(){console.log("Mouse Event")};
@@ -912,7 +997,16 @@ textBox.onfocus = function(){console.log("Focus Event")};
 myForm.onsubmit = function(){console.log("Submit Event")};
 */
 
-
+// let myCurrent = document.querySelector("[title = 'current']");
+// let addInput = document.getElementsByClassName("classes-to-add")[0];
+// console.log(addInput);
+// let removeInput = document.getElementsByClassName("classes-to-remove")[0];
+// console.log(removeInput);
+// let myClassList = document.querySelector(".classes-list div");
+// console.log(myClassList);
+// addInput.onblur = ()=>{
+//     let classList = addInput.value;
+// };
 
 
 
@@ -1032,6 +1126,9 @@ element.remove();
 
 
 
+
+
+
 //----DOM Traversing----//
 
 
@@ -1090,6 +1187,13 @@ myButton.addEventListener("click" , function(){
 });
 */
 
+// let myElements = document.body.querySelectorAll("div,span,p,article,section");
+// console.log(myElements.length);
+// for(let i =0 ; i <myElements.length;i++){
+//     myElements[i].onclick = (e)=>{
+//         console.log(`This is ${e.target.tagName.toLowerCase()}`);
+//     };
+// }
 
 
 
@@ -1122,7 +1226,6 @@ if(confirmMessage){
 let promptMessage = window.prompt("Is it suitable?" , "Default message");
 console.log(promptMessage);
 */
-
 
 
 
@@ -1259,7 +1362,6 @@ window.scrollTo({
 //----Local storage----//
 
 
-
 /*
 //SET
 window.localStorage.setItem("color","red");
@@ -1329,8 +1431,6 @@ console.log(w + " " + r + " " + t);
 */
 
 
-
-
 //----Destructuring Arrays pt2----//
 
 
@@ -1379,9 +1479,21 @@ console.log(theAge);
 console.log(theTitle);
 console.log(theCountry);
 */
- 
+
+// const member = {
+//     age: 30,
+//     working: false,
+//     country: "Egypt",
+//     hobbies: ["Reading", "Swimming", "Programming"],
+// };
+
+// let {age : a , working: w,country:c , hobbies : [h1,,h3]} = member;
 
 
+
+// console.log(`My Age Is ${a} And Iam ${w ? "" : "Not"} Working`);
+// console.log(`I Live in ${c}`);
+// console.log(`My Hobbies: ${h1} And ${h3}`);
 
 
 
@@ -1419,8 +1531,36 @@ console.log(skillOne , skillTwo);
 */
 
 
+// const game = {
+//     title: "YS",
+//     developer: "Falcom",
+//     releases: {
+//       "Oath In Felghana": ["USA", "Japan"],
+//       "Ark Of Napishtim": {
+//         US: "20 USD",
+//         JAP: "10 USD",
+//       },
+//       Origin: "30 USD",
+//     },
+//   };
 
+//   let {title:t , developer:d, releases:{["Oath In Felghana"]:o,["Oath In Felghana"]:[u,j]}} = game;
+//   console.log(`My Favourite Games Style Is ${t} Style`);
+//   console.log(`And I Love ${d} Games`);
+//   console.log(`My Best Release Is ${o} It Released in ${u} & ${j}`);
+// let chosen = 3;
 
+// let myFriends = [
+//   { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
+//   { title: "Ahmed", age: 25, available: false, skills: ["Python", "Django"] },
+//   { title: "Sayed", age: 33, available: true, skills: ["PHP", "Laravel"] },
+// ];
+
+// let{title: t , age: a, available: av , skills:[,two]} = myFriends[chosen-1];
+// console.log(t);
+// console.log(a);
+// console.log(`${av?"":"Not "}Available`);
+// console.log(two);
 
 
 
@@ -1455,3 +1595,433 @@ function showDetails({theName : n, theAge, theTitle} = user){
     console.log(`Your title is${theTitle}`);
 }
 */
+
+
+
+
+
+//----Set data types, and methods----//
+
+
+/*
+let myData = [1,1,2,2,3];
+let myUniqueData = new Set([1,2,3,2,1]);
+console.log(myData);
+console.log(myUniqueData);
+console.log(myUniqueData.size);
+myUniqueData.add(4).add(4).add(7);
+console.log(myUniqueData);
+myUniqueData.delete(2);
+console.log(myUniqueData);
+console.log(myUniqueData.size);
+console.log(myUniqueData.has(4));
+myUniqueData.clear();
+*/
+
+
+
+
+
+
+//----Set vs WeakSet, and garbage collector----//
+
+//Weakset stores objects only. 
+/*
+let mySet = new Set([0,1,1,2,3]);
+console.log(mySet);
+console.log("#".repeat(20));
+
+let iterator = mySet.keys();
+console.log(iterator);
+console.log(iterator.next());
+console.log(iterator.next().value);
+mySet.forEach((el)=>{
+   console.log(el);
+});
+
+let myWS = new WeakSet([{A: 1}]);
+console.log(typeof myWS);
+console.log(myWS);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----Set datatypes, and methods----//
+
+/*
+let myData = [1,1,1,2,3];
+let myUniqueData = new Set(myData);
+console.log(myUniqueData);
+console.log(myUniqueData.size);
+console.log(myData[0]);
+console.log(myUniqueData[0]);
+myUniqueData.add(3).add(9).add(5);
+console.log(myUniqueData);
+console.log(myUniqueData.has(1));
+myUniqueData.delete(2);
+console.log(myUniqueData);
+console.log(myUniqueData.size);
+myUniqueData.clear();
+myUniqueData.has(4); 
+*/
+
+
+
+//----Set Vs WeakSet, and garbage collector----//
+
+
+/*
+let mySet = new Set([1,1,2,3,"K",true]);
+console.log(mySet);
+console.log(`Size of elements in set is ${mySet.size}`);
+
+let iterator = mySet.values();
+console.log(iterator);
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+console.log(iterator.next());
+console.log(iterator);
+
+mySet.forEach((el)=>{
+    console.log(el);
+});
+
+
+let weakSet = new WeakSet([{
+    name: "Osama",
+    age: 30,
+    nationality: "Egypt"
+}]);
+
+console.log(typeof weakSet);
+*/
+
+
+
+
+
+
+
+
+
+
+//----Map datatype Vs Object----//
+
+//Map does not have default keys
+//Map Ordered by insertion
+/*
+let obj = {};
+let myEmptyObj = Object.create(null); //No default keys
+let myMap = new Map();
+console.log(myEmptyObj);
+console.log(obj);
+console.log(myMap);
+
+let myNewObj = {
+    10: "Number",
+    "10" : "String"
+}
+console.log(myNewObj[10])
+
+let myNewMap = new Map();
+myNewMap.set(10,"Number");
+myNewMap.set("10","String");
+console.log(myNewMap.get(10));
+console.log(myNewMap.get("10"));
+console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+console.log(myNewObj);
+console.log(myNewMap);
+myNewMap.set(true,"Boolean");
+myNewMap.set({a:1,b:2},"Object");
+myNewMap.set(function doStuff(){},"Function");
+console.log(myNewMap.get(true)); 
+*/
+
+
+
+
+
+//----Map Methods----//
+
+/*
+let myMap = new Map([
+    [4, "Four"],
+    ["Job Title", "Front-End developer"],
+    [false, "Boolean"]
+]);
+myMap.set(10,"Number");
+myMap.set("Name","String");
+console.log(myMap);
+console.log(myMap.size);
+console.log(myMap.has(false));
+console.log(myMap.get(10));
+console.log(myMap.get("Name"));
+console.log(myMap.delete("Name"));
+console.log(myMap.size);
+myMap.clear();
+console.log(myMap.size);
+*/
+
+
+
+
+
+
+
+
+//----Map VS WeakMap----//
+
+
+//Weak map uses only objects as keys
+/*
+let mapUser = {theName : "Elzero"};
+let myMap = new Map();
+mapUser = null;
+myMap.set(mapUser, "Object Value");
+console.log(myMap);
+console.log("#".repeat(30));
+let weakMapUser = {theName : "Osama"};
+let myWeakMap = new WeakMap();
+myWeakMap.set(weakMapUser , "Object Value");
+weakMapUser = null;
+console.log(myWeakMap);
+*/
+
+
+
+
+
+
+
+
+//----Array.from Method----//
+
+
+/*
+console.log(Array.from("Osama"));
+console.log(Array.from("12345",function(n){
+    return +n + +n; 
+}));
+
+let myArray = [1,1,2,3,4];
+// let mySet = new Set(myArray);
+// console.log(mySet);
+// console.log(Array.from(mySet)); 
+// console.log([...new Set(myArray)]);//One line do the same function
+
+function testArgs(){
+    return arguments;
+}
+
+function af(){
+    return Array.from(arguments);
+}
+console.log(testArgs("Osama","Ahmed","Sayed"));
+console.log(af("Hello","World","Again"));
+*/
+
+
+
+
+
+
+//----Array.copyWithin method----//
+
+/*
+let myArray  = [10,20,30,40,50,"A","B"];
+console.log(myArray);
+// myArray.copyWithin(3);
+console.log(myArray);
+// myArray.copyWithin(4,6);
+console.log(myArray);
+// myArray.copyWithin(1,-2);
+console.log(myArray);
+myArray.copyWithin(1,-2,-1);
+console.log(myArray);
+*/
+
+
+
+
+
+//----Array.some method----//
+
+
+/*
+let myArray = [1,2,3,4,5,6,7];
+let myNumber = 5;
+// let check = myArray.some(function(e){
+//     console.log(this);
+//     console.log("Test");
+//     return e > 5;
+// },myNumber);
+
+let check = myArray.some(function(e){
+    console.log(this);
+    return e > this;
+},myNumber);
+
+console.log(check);
+
+function checkValues(arr , value){
+    return arr.some(function(e){
+        console.log(this);
+        return e === value;
+    });
+}
+
+console.log(checkValues(myArray , 5));
+
+let range = {
+    min: 10,
+    max : 20
+};
+
+let checkNumberInRange = myArray.some(function(e){
+    console.log(this.min);
+    console.log(this.max);
+    return e >= this.min && e <= this.max;
+},range);
+
+console.log(checkNumberInRange);
+*/
+
+
+
+
+
+//----Array.every method----//
+
+
+/*
+let nums = [1,2,3,4,5,6,7,8,9,10];
+
+const locations = {
+    20: "Rome",
+    30: "Spain",
+    40: "Palestine",
+    50: "Egypt",
+};
+
+let mainLocation = 15;
+let locationsArray = Object.keys(locations);
+console.log(locationsArray);
+let locationsArrayNumber = locationsArray.map((n)=> +n);
+console.log(locationsArrayNumber);
+let check = locationsArrayNumber.every(function(e){
+    return e > this;
+},mainLocation);
+console.log(check);
+*/
+
+
+
+
+
+
+
+//----Spread syntax and use cases----//
+
+
+/*
+console.log("Osama");
+console.log(..."Osama");
+console.log([..."Osama"]);
+
+let myArr1 = [1,2,3];
+let myArr2 = [4,5,6];
+let allArrs = [...myArr1,...myArr2];
+console.log(allArrs);
+
+let copiedArray = [...myArr1];
+console.log(copiedArray);
+
+let allFriends = ["Osama","Ahmed","Sayed"];
+let newFriends = ["Sameh","Mahmoud"];
+allFriends.push(...newFriends);
+console.log(allFriends);
+
+let nums = [10,20,-100,100,1000,500];
+console.log(Math.max(...nums));
+
+
+let objOne = {
+    a:1,
+    b:2
+};
+
+let objTwo = {
+    c:3,
+    d:4
+};
+
+console.log({...objOne,...objTwo,e:5});
+*/
+
+///////////////////////////////////////////PRACTISE////////////////////////
+// let theName = "Elzero";
+// console.log([...new Set(theName)]);
+// console.log(Array.from(theName));
+// console.log([...theName]);
+// console.log(Array.from(theName,function(e){
+//     return e;
+// }));
+// console.log(Array(...theName));
+//////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+//----Regular Expression-Modifiers----//
+
+
+
+// i => case insensetive
+// g => global
+// m => multilines
+/*
+let str = "Hello Elzero Web School I Love elzero";
+let regExpression  = /Elzero/i;
+console.log(str.match(regExpression));
+console.log(str.match(/elzero/));
+console.log(str.match(/elzero/i));
+console.log(str.match(/elzero/ig));
+console.log(str.match(new RegExp("elzero" , "ig")));
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
