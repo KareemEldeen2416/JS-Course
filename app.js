@@ -2009,19 +2009,223 @@ console.log(str.match(new RegExp("elzero" , "ig")));
 
 
 
+//----Regular Expression - Ranges pt1----//
+
+
+/*
+let tld = "Com Net Org Info Code Io";
+let tldRe = /(org|info|io)/ig;
+console.log(tld.match(tldRe));
+
+let nums = "12345678910";
+let numsRe = /[0-9]/;
+console.log(nums.match(numsRe));
+numsRe = /[0-9]/g;
+console.log(nums.match(numsRe));
+console.log(nums.match(/[0-4]/g));
+
+let notNums = "012345678910";
+let notNumsRe = /[^0-3]/g;
+console.log(notNums.match(notNumsRe));
+
+let specialNums = "1!2@3#4$5%678910";
+let specialRe = /[^0-9]/g;
+console.log(specialNums.match(specialRe));
+
+
+let practise = "Os1 Os1Os Os2 Os8 Os8Os";
+let practiseRe = /Os[5-9]Os/g;
+console.log(practise.match(practiseRe));
+*/
 
 
 
 
 
 
+//----Regular Expression - Ranges pt2----//
+
+
+/*
+let myString = "AaBbCcdefG123!234%^&*";
+let AToZsmall = /[a-z]/g;
+let notA2zsmall = /[^a-z]/g;
+let A2ZCaps = /[A-Z]/g;
+let notA2ZCaps = /[^A-Z]/g;
+let ace = /[ace]/g;
+let notAce = /[^ace]/g;
+let smallAndCaps = /[a-z]/ig;
+let smallAndCaps2 = /[a-zA-Z]/g;
+let specialChars = /[^a-zA-Z0-9]/g;
+console.log(myString.match(AToZsmall));
+console.log(myString.match(notA2zsmall));
+console.log(myString.match(A2ZCaps));
+console.log(myString.match(notA2ZCaps));
+console.log(myString.match(ace));
+console.log(myString.match(notAce));
+console.log(myString.match(smallAndCaps));
+console.log(myString.match(smallAndCaps2));
+console.log(myString.match(specialChars));
+*/
 
 
 
 
 
 
+//----Regular Expression - Character classes----//
+
+/*
+let email = "O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s.org 1@1.com";
+let dot = /./g;
+let word = /\w/g;
+let Word = /\W/g;
+let valid = /\w@\w.(com|net)/g;
+console.log(email.match(dot));
+console.log([...new Set(email.match(dot))]);
+console.log(email.match(word));
+console.log(email.match(Word));
+console.log(email.match(valid));
+*/
 
 
 
 
+
+
+//----Regular Expression - character classes pt2----//
+
+
+/*
+let names= "Sayed 1Spam 25Spam Spam4 Spam5 Osama Ahmed Aspamo";
+let re = /spam/ig;
+let ran = /\bspam/ig;
+let ran2 = /spam\b/ig;
+let full = /(\bspam|spam\b)/ig;
+console.log(names.match(re));
+console.log(names.match(ran));
+console.log(names.match(ran2));
+console.log(names.match(full));
+console.log(re.test(names));
+console.log(/spam/ig.test("Osama"));
+console.log(/spam/ig.test("Onespam"));
+*/
+
+
+
+
+
+
+//----Regular Expression - Quantifiers pt1----//
+
+
+/*
+let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru";
+let nums = "0110 10 150 05120 0560 350 00";
+let urls = "https://google.com http://ww.website.net web.com";
+let mailRe = /\w@\w\w.sa/ig;
+let advancedMailRe = /\w+@\w+.(com|net)/ig;
+let numRe = /0\d*0/ig;
+let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
+console.log(mails.match(mailRe));
+console.log(mails.match(advancedMailRe));
+console.log(mails.match(/\w+@\w+.\w+/ig));
+console.log(nums.match(numRe));
+console.log(urls.match(urlsRe));
+*/
+
+
+
+
+
+//----Regualar Expression - Quantifiers pt2----//
+
+/*
+let serials = "S100S S3000S S50000S S950000S";
+console.log(serials.match(/s\d{3}s/ig));
+console.log(serials.match(/s\d{4,5}s/ig));
+console.log(serials.match(/s\d{4,}s/ig));
+*/
+
+
+
+
+//----Regular Expression - Quantifiers pt3----//
+
+
+/*
+let myString = "We Love Programming";
+let names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+console.log(/ing$/ig.test(myString)); //Ends with ing?
+console.log(/lzs$/g.test(names)); 
+console.log(/^we/ig.test(myString)); 
+console.log(/^we/ig.test(names)); 
+console.log(/^\s/ig.test(names)); 
+console.log(/^\d/ig.test(names)); 
+console.log(/^\w/ig.test(names)); 
+console.log(names.match(/\d\w{5}(?=Z)/ig));
+console.log(names.match(/\d\w{8}(?!Z)/ig));
+*/
+
+
+
+//----Regular Expression - Replace with----//
+
+
+/*
+let txt = "We Love Programming And @ Because @ Is Amazing";
+console.log(txt.replace("@" , "JavaScript"));
+console.log(txt.replaceAll("@" , "JavaScript"));
+
+let re = /@/ig;
+console.log(txt.replaceAll(re,"JavaScript"));
+*/
+
+
+
+
+//----Regular Expression - Test, and Discussion----//
+
+
+// let ip = "2001:db8:3333:4444:5555:6666:7777:8888";
+// let re = /[4-8]{4}/ig;
+// console.log(ip.match(re));
+
+// let specialNames = "Os10O OsO Os100O Osa100O Os1000 Os100m";
+// let re = /Os\d*O/ig;
+// console.log(specialNames.match(re));
+
+// let phone = "+(995)-123 (4567)";
+// let re = /\+\(\d{3}\)\-\d{3} \(\d{4}\)/ig;
+// console.log(phone.match(re));
+
+
+// let date1 = "25/10/1982";
+// let date2 = "25 - 10 - 1982";
+// let date3 = "25 10 1982";
+// let date4 = "25 10 82";
+
+
+
+// let re = /\d{2}(\/|\s\-\s| )\d{2}(\/|\s\-\s| )\d{2,4}/ig;
+
+// console.log(date1.match(re)); // "25/10/1982"
+// console.log(date2.match(re)); // "25 - 10 - 1982"
+// console.log(date3.match(re)); // "25 10 1982"
+// console.log(date4.match(re)); // "25 10 82"
+
+
+
+// let url1 = 'elzero.org';
+// let url2 = 'http://elzero.org';
+// let url3 = 'https://elzero.org';
+// let url4 = 'https://www.elzero.org';
+// let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+// let re = /(https?:\/\/)?(www.)?\w*.\w*(:\w{4}\/\w*.\w*\?id=\w{3}&\w{3}=\w*)?/ig;
+
+// console.log(url1.match(re));
+// console.log(url2.match(re));
+// console.log(url3.match(re));
+// console.log(url4.match(re));
+// console.log(url5.match(re));
