@@ -2229,3 +2229,447 @@ console.log(txt.replaceAll(re,"JavaScript"));
 // console.log(url3.match(re));
 // console.log(url4.match(re));
 // console.log(url5.match(re));
+
+
+
+
+
+
+
+
+
+//----Constructor Function----//
+
+
+/*
+function User(id , userName , salary){
+    this.id = id;
+    this.userName = userName;
+    this.salary = salary + 1000;
+}
+
+let userOne = new User(100,"Elzero",5000);
+let userTwo = new User(101,"Hassan",6000);
+let userThree = new User(102,"Sayed",7000);
+console.log(userOne.id);
+console.log(userTwo.userName);
+console.log(userOne.salary);
+console.log(userTwo.salary);
+console.log(userThree.salary);
+*/
+
+
+
+
+
+
+
+//---Constructor function new syntax----//
+
+
+/*
+class User {
+    constructor(id, userName, salary) {
+        this.id = id;
+        this.userName = userName;
+        this.salary = salary + 1000;
+    }
+}
+
+let userOne = new User(100,"Elzero",5000);
+let userTwo = new User(101,"Hassan",6000);
+let userThree = new User(102,"Sayed",7000);
+
+console.log(userOne.userName);
+console.log(userTwo.id);
+console.log(userThree.salary);
+console.log(userOne instanceof User);
+console.log(userOne.constructor === User);
+*/
+
+
+
+
+
+
+//----Deal with properties, and meethods----//
+
+
+/*
+class User {
+    constructor(id, userName, salary) {
+        this.id = id;
+        this.userName = userName || "Unknown";
+        this.salary = salary < 6000?   salary + 500 : salary;
+        this.msg = function(){
+            return `Hello, ${this.userName}, Salary is ${this.salary}`;
+        }
+    }
+
+    writeMessage(){
+        return `From Write message`;
+    }
+}
+
+let userOne = new User(100,"Elzero",5000);
+let userTwo = new User(101,"",6000);
+
+console.log(userOne.userName);
+console.log(userOne.salary);
+console.log(userTwo.userName);
+console.log(userTwo.salary);
+console.log(userTwo.msg());
+console.log(userTwo.msg); //Native code
+console.log(userOne.writeMessage());
+console.log(userOne.writeMessage);
+*/
+
+
+
+
+
+//----Update properties, and built-in constructors----//
+
+
+/*
+class User {
+    constructor(id, userName, salary) {
+        this.i = id;
+        this.u = userName;
+        this.s = salary + 1000;
+    }
+
+    updateUserName(newName){
+        this.u = newName;
+    }
+}
+
+let userOne = new User(100,"Elzero",5000);
+
+console.log(userOne.u);
+userOne.updateUserName("Osama");
+console.log(userOne.u);
+
+let strOne = "Elzero";
+let strTwo = new String("Elzero");
+console.log(typeof strOne);
+console.log(typeof strTwo);
+console.log(strOne instanceof String);
+console.log(strTwo instanceof String);
+console.log(strOne.constructor === String);
+console.log(strTwo.constructor === String);
+*/
+
+
+
+
+//----Class static properties, and methods----//
+
+
+/*
+class User {
+    static count =0 ;
+    constructor(id, userName, salary) {
+        this.i = id;
+        this.u = userName;
+        this.s = salary + 1000;
+        User.count++;
+    }
+    static sayHello(){
+        return "Hello From Class";
+    }
+    static countMembers(){
+        return `${this.count} Members created`;
+    }
+}
+
+let userOne = new User(100,"Elzero",5000);
+let userTwo = new User(101,"Hassan",6000);
+console.log(userOne.u);
+console.log(userTwo.u);
+console.log(userOne.count);
+console.log(User.count);
+// console.log(userOne.sayHello());
+console.log(User.sayHello());
+console.log(User.countMembers());
+*/
+
+
+
+//----Class inheritance----//
+
+
+/*
+//Parent class
+class User {
+    constructor(id, userName) {
+        this.i = id;
+        this.u = userName;
+    }
+    sayHello(){
+        return "Hello From Class";
+    }
+    
+}
+
+
+//Derived class
+class Admin extends User{
+    constructor(id, userName, permissions) {
+        super(id,userName);
+        this.p = permissions;
+    }
+}
+
+class Superman extends Admin{
+    constructor(id,userName,permissions,ability){
+        super(id,userName,permissions);
+        this.a = ability;
+    }
+}
+
+let userOne = new User(100,"Elzero");
+console.log(userOne.u);
+console.log(userOne.i);
+let adminOne = new Admin(110,"Mohammed",1);
+console.log(adminOne.i);
+console.log(adminOne.u);
+console.log(adminOne.p);
+console.log(adminOne.sayHello());
+let superOne = new Superman(200,"Toni",1,23);
+console.log(superOne.a);
+console.log(superOne.sayHello());
+*/
+
+
+
+
+
+//----Class Encapsulation----//
+
+
+/*
+class User{
+    //Private property
+    #e;
+    constructor(id,userName,eSalary){
+        this.i = id;
+        this.u = userName;
+        this.#e = eSalary;
+    }
+    getSalary(){
+        return parseInt(this.#e);
+    }
+}
+
+let userOne = new User(100,"Elzero","5000 P.E");
+console.log(userOne.u);
+console.log(userOne.u);
+console.log(userOne.getSalary() * 0.3);
+// console.log(userOne.e *0.3);
+*/
+
+
+
+
+
+//----Prototype introduction----//
+
+/*
+class User {
+    constructor(id,userName){
+        this.i = id;
+        this.u = userName;
+    }
+    sayHello(){
+        return "Hello From Class";
+    }
+}
+
+let userOne = new User(1,"Osama");
+console.log(userOne.i);
+console.log(User.prototype);
+let strOne = "Elzero";
+console.log(String.prototype);
+*/
+
+
+
+
+
+
+//----Add to prototype chain, and extend constructors features----//
+
+
+/*
+class User {
+    constructor(id,userName){
+        this.i = id;
+        this.u = userName;
+    }
+    sayHello(){
+        return "Hello From Class";
+    }
+}
+
+let userOne = new User(1,"Osama");
+console.log(userOne.u);
+console.log(User.prototype);
+console.log(userOne);
+User.prototype.sayWelcome = function(){
+    return "Welcome";
+};
+console.log(userOne.sayWelcome());
+Object.prototype.love = "Elzero Web School";
+let arr = [];
+console.log(arr.love);
+console.log(userOne.love);
+console.log(userOne);
+String.prototype.addBeforeAndAfter = function(val){
+    return `.${this}.`;
+};
+
+let str = "Osama";
+console.log(str.addBeforeAndAfter());
+*/
+
+
+
+
+
+//----Object meta data, and descriptor pt1----//
+
+
+
+/*
+const myObject = {
+    a:1,
+    b:2,
+};
+
+
+Object.defineProperty(myObject, 'c' ,{
+    //Default False
+    writable : true,
+    enumerable : true,
+    configurable : true,
+    value : 3,
+});
+
+console.log(myObject);
+myObject.c = 100;
+console.log(myObject);
+for(let prop in myObject){
+    console.log(prop,myObject[prop]);
+}
+console.log(delete myObject.c);
+console.log(myObject);
+*/
+
+
+
+//----Object meta data, and descriptor pt2----//
+
+
+/*
+const myObject = {
+    a:1,
+    b:2,
+};
+
+Object.defineProperties(myObject,{
+    c:{
+        configurable: true,
+        value : 3,
+    },
+    d:{
+        configurable : true,
+        value : 4,
+    },
+    e:{
+        configurable : true,
+        value : 5
+    }
+});
+
+console.log(myObject);
+console.log(Object.getOwnPropertyDescriptor(myObject,'d'));
+console.log(Object.getOwnPropertyDescriptors(myObject));
+*/
+
+
+
+///////////////////PRACTISE////////////////////
+
+/*
+class User {
+    #c;
+    str = "";
+    re = /\w{4}\-\w{4}\-\w{4}\-\w{4}/ig;
+    constructor(username, card) {
+        this.u = username;
+        this.#c = String(card);
+        if(this.re.test(this.#c) === false){
+            for(let i = 0 ; i < this.#c.length ; i++){
+                if( i%4 === 0 && i !== 0 ){
+                    if(this.#c[i] === "-"){
+                        this.str += this.#c[i];
+                    }else{
+                        this.str += ("-"+this.#c[i]);
+                    }
+                }else{
+                    this.str += this.#c[i];
+                }
+            }
+        }else{
+            this.str = this.#c;
+        }
+        console.log(this.#c);
+    }
+    showData(){
+        return this.str;
+    }
+}
+
+
+let userOne = new User("Osama", "1234-5678-1234-5678");
+let userTwo = new User("Ahmed", "1234567812345678");
+let userThree = new User("Ghareeb", 1234567812345678);
+console.log(userOne.showData());
+console.log(userTwo.showData());
+console.log(userThree.showData());
+console.log(userOne.c);
+*/
+
+
+
+// const myObj = {
+//     username: "Elzero",
+//     id: 100,
+//     score: 1000,
+//     country: "Egypt",
+// };
+
+
+// Object.defineProperties(myObj,{
+//     id:{
+//         enumerable:false,
+//     }
+// });
+// delete myObj["country"]
+
+
+// myObj.score = 500;
+
+// for (let prop in myObj) {
+//     console.log(`${prop} => ${myObj[prop]}`);
+// }
+
+// console.log(myObj)
+
+
+
+
+
+
+
