@@ -2929,3 +2929,198 @@ function sayHello(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+//----JSON Object, and JS Object----//
+
+/*
+----Available data types in JSON----
+String
+Number
+Object
+Array
+Boolean 
+null
+*/
+
+
+
+
+
+//----Parse, and Stringify----//
+
+/*
+const myJSONObject = '{"username":"Osama" , "age": 39 }';
+console.log(typeof myJSONObject);
+const myJSObject = JSON.parse(myJSONObject);
+console.log(typeof myJSObject);
+console.log(myJSObject);
+myJSObject["username"] = "elzero";
+myJSObject["age"] = 19;
+console.log(myJSONObject);
+console.log(myJSObject);
+const myJSONOb = JSON.stringify(myJSObject);
+console.log(typeof myJSONOb);
+console.log(myJSONOb);
+*/
+
+
+
+
+
+//----Asynchronous VS Synchronous programming----//
+
+//Synchronous
+// console.log(1);
+// console.log(2);
+// console.log(3);
+// window.alert("Operation");
+// console.log(4);
+
+//Asynchronous
+// console.log(1);
+// console.log(2);
+// setTimeout(()=>{
+//     console.log("Operation")
+// },4000);
+// console.log(3);
+
+
+
+
+
+
+
+
+
+
+
+//----Call stack, and web API----//
+
+
+/*
+setTimeout(()=>{
+    console.log("API");
+},0);
+
+function one(){
+    console.log("One");
+}
+function two(){
+    one();
+    console.log("Two");
+}
+function three(){
+    two();
+    console.log("Three");
+}
+
+three();
+*/
+
+
+
+
+
+
+
+//----Event Loop, and callback queue----//
+
+/*
+console.log("One");
+setTimeout(()=>{
+    console.log("Three");
+},0);
+setTimeout(()=>{
+    console.log("Four");
+},0);
+console.log("Two");
+
+setTimeout(()=>{
+    console.log(myVar);
+});
+let myVar = 100;
+myVar += 100;
+*/
+
+
+
+
+
+//----What is Ajax, and network information----//
+
+/*
+let request = new XMLHttpRequest();
+console.log(request);
+*/
+
+
+
+
+
+//----Request, and response from real API----//
+
+
+
+//Ready state => status of request
+/*
+[0] request not initialized
+[1] server connection established
+[2] request received
+[3] processing request
+[4] request in finished, and response is ready
+*/
+/*
+let myRequest = new XMLHttpRequest();                               //async
+myRequest.open("GET","https://api.github.com/users/KareemEldeen2416",true);
+myRequest.send();
+console.log(myRequest);
+
+myRequest.onreadystatechange = function(){
+    console.log(myRequest.readyState);
+    console.log(myRequest.status);
+    if(this.readyState === 4 && this.status === 200){
+        console.log(this.responseText);
+        console.log(typeof this.responseText);
+    }
+};
+*/
+
+
+
+
+
+//----Loop on data----//
+
+/*
+let myRequest = new XMLHttpRequest();                               //async
+myRequest.open("GET","https://api.github.com/users/KareemEldeen2416",true);
+myRequest.send();
+console.log(myRequest);
+
+myRequest.onreadystatechange = function(){
+    console.log(myRequest.readyState);
+    console.log(myRequest.status);
+    if(this.readyState === 4 && this.status === 200){
+        console.log(this.responseText);
+        console.log(typeof this.responseText);
+        let jsData = JSON.parse(this.responseText);
+        console.log(jsData);
+        let div = document.createElement("div");
+        let user = document.createTextNode("User : "+jsData.login);
+        div.appendChild(user);
+        document.body.appendChild(div);
+    }
+};
+*/
+
+
+

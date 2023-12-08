@@ -1,0 +1,11 @@
+{
+    "Name": "Osama",
+    "Number": 100,
+    "Address":{
+        "EG":"Giza",
+        "KSA":"Ryiadh"
+    },
+    "Array":["HTML","CSS","JS"],
+    "boolean":true,
+    "null":null
+}
