@@ -2669,7 +2669,263 @@ console.log(userOne.c);
 
 
 
+//Date, and time----//
+//******YEAR 2038 PROBLEM IN COMPUTER SCIENCE*****/
 
+/*
+let dateNow = new Date();
+console.log(dateNow);
+console.log(Date.now());
+let seconds = Date.now()/1000;
+console.log(seconds);
+let minutes = seconds / 60;
+console.log(minutes);
+let hours = minutes / 60;
+console.log(hours);
+let days = hours/24;
+console.log(days);
+let years = days/365;
+console.log(years);
+*/
+
+
+
+
+
+//----Get data, and time----//
+
+
+/*
+let dateNow = new Date();
+let birthday = new Date("Oct 25, 82");
+let dateDiff = dateNow-birthday;
+console.log(dateDiff/1000/60/60/24/365);
+console.log(dateNow);
+console.log(dateNow.getTime());
+console.log(dateNow.getDate());
+console.log(dateNow.getFullYear());
+console.log(dateNow.getMonth());
+console.log(dateNow.getDay());
+console.log(dateNow.getHours());
+console.log(dateNow.getMinutes());
+console.log(dateNow.getSeconds());
+*/
+
+
+
+
+
+
+//----Set date, and time----//
+
+
+/*
+let dateNow = new Date();
+console.log(dateNow);
+console.log("#".repeat(30));
+
+// dateNow.setTime(0);
+// console.log(dateNow);
+
+// dateNow.setTime(10000);
+// console.log(dateNow);
+
+dateNow.setDate(1);
+console.log(dateNow);
+dateNow.setDate(0);
+console.log(dateNow);
+dateNow.setDate(-10);
+console.log(dateNow);
+dateNow.setDate(40);
+console.log(dateNow);
+dateNow.setFullYear(2012,1);
+console.log(dateNow);
+dateNow.setMonth(13);
+console.log(dateNow);
+dateNow.setMonth(0);
+console.log(dateNow);
+*/
+
+
+
+
+
+//----Formatting date, and time----//
+
+/*
+console.log(Date.parse("Oct 25 1982"));
+let date1 =  new Date(404377200000);
+console.log(date1);
+
+let date2 = new Date("10/25/1982");
+console.log(date2);
+
+let date3 = new Date("10@25/1982");
+console.log(date3);
+
+let date4 = new Date("1982-10-25");
+console.log(date4);
+
+let date5 = new Date("1982-10");
+console.log(date5);
+
+let date6 = new Date(1982,9,25,2,10,0);
+console.log(date6);
+
+let date7 = new Date(1982,9,25);
+console.log(date7);
+
+let date8 = new Date("1982-10-25T06:10:00Z");
+console.log(date8);
+*/
+
+
+
+
+
+
+
+//----Tracking Operations Time----//
+
+
+//Search for [perfomance.now() , performance.mark()]
+/*
+let start = new Date();
+for(let i =0 ; i < 10000;i++){
+    document.write(`<div>${i}</div>`);
+}
+let end = new Date();
+
+let duration = end - start;
+console.log(duration);
+*/
+
+
+
+
+
+//----Generator Function----//
+
+
+/*
+function* generateNumbers(){
+    yield 1;
+    alert("Hello after yield one");
+    yield 2;
+    yield 3;
+    yield 4;
+}
+
+let generator = generateNumbers();
+console.log(typeof generator);
+console.log(generator);
+console.log(generator.next());
+console.log(generator.next().value);
+console.log(generator.next().done);
+console.log(generator.next());
+console.log(generator.next());
+
+for(let value of generateNumbers()){
+    console.log(value);
+}
+
+for(let value of generator){
+    console.log(value);
+}
+*/
+
+
+
+
+
+
+
+//----Delegate generator function----//
+
+
+/*
+function* generateNums(){
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+function* generateLetters(){
+    yield "A";
+    yield "B";
+    yield "C";
+}
+
+function* generateAll(){
+    yield* generateNums();
+    yield* generateLetters();
+    yield* [4,5,6];
+}
+
+
+let generator = generateAll();
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.return("Done"));
+console.log(generator.next());
+for(let value of generateAll()){
+    console.log(value);
+}
+*/
+
+
+
+
+//----Generate infinite numbers----//
+
+
+/*
+function* generateNumbers(){
+    yield 1;
+    yield 2;
+    yield 3;
+    return "Done";
+    yield 4;
+}
+
+function* infNumbers(){
+    let index =0 ;
+    while(true){
+        yield index++;
+    }
+}
+
+let generator = generateNumbers();
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+for(let value of generateNumbers()){
+    console.log(value);
+}
+
+for(let value of infNumbers()){
+    console.log(value);
+}
+*/
+
+
+
+
+
+//----Modules Import, and Export----//
+
+
+/*
+let a = 10;
+let arr = [1,2,3,4];
+function sayHello(){
+    return "Hello";
+}
+*/
 
 
 
