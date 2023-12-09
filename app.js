@@ -3124,3 +3124,298 @@ myRequest.onreadystatechange = function(){
 
 
 
+
+
+
+//----Promise intro, and syntax----//
+
+
+
+// const myPromise = new Promise(function(resolve,reject){
+// let connect = true;
+// if(connect){
+//     resolve("Connection Established");
+// }else{
+//     reject("Connection Failed");
+// }
+// }).then(
+//     (resolveValue)=> console.log(`Good ${resolveValue}`),
+//     (rejectValue) => console.log(`Bad ${rejectValue}`)
+// );
+
+/*
+const myPromise = new Promise(function(resolve,reject){
+let connect = false;
+if(connect){
+    resolve("Connection Established");
+}else{
+    reject("Connection Failed");
+}
+});
+console.log(myPromise);
+myPromise.then(
+    (resolveValue)=> console.log(`Good ${resolveValue}`),
+    (rejectValue) => console.log(`Bad ${rejectValue}`)
+);
+console.log(myPromise);
+*/
+
+
+
+
+//----Promise, then, and catch----//
+
+
+/*
+const myPromise = new Promise((resolveFunction,rejectFunction)=>{
+    let emps = ["Osama","Ahmed","Sayed","Mahmoud"];
+    if(emps.length ===4){
+        resolveFunction(emps);
+    }else{
+        rejectFunction(Error("No. of emplyees is not Four"));
+    }
+});
+
+
+myPromise.then(
+    (resolveValue)=> {
+        resolveValue.length = 2;
+        console.log(resolveValue);
+        return resolveValue;
+    },
+);
+
+myPromise.then(
+    (resolveValue)=>{
+        resolveValue.length = 1;
+        return resolveValue;
+    }
+);
+
+myPromise.then(
+    (resolveValue)=>{
+        console.log(`Choosed one is ${resolveValue[0]}`)
+    }
+);
+
+myPromise.catch((rejectReason)=>console.log(rejectReason));
+myPromise.finally(
+    console.log("Operation is done")
+);
+*/
+
+
+
+
+
+//----Promise, and XHR----//
+
+/*
+const getData = (apiLink)=>{
+    return new Promise((resolveFunction,rejectFunction)=>{
+        let count =1 ;
+        if(count){
+            resolveFunction("Hello");
+        }else{
+            rejectFunction("Bye");
+        }
+    });
+};
+
+console.log(getData("https://api.github.com/users/KareemEldeen2416"));
+getData("https://api.github.com/users/KareemEldeen2416").then(
+    (resolve)=> console.log(resolve)
+);
+*/
+
+
+
+
+
+
+//----Fetch API----//
+
+/*
+fetch("https://api.github.com/users/KareemEldeen2416").then(
+    (result)=>{
+        console.log(result);
+        let myData = result.json();
+        console.log(myData);
+        return myData;
+    }
+).then(
+    (fullData)=>{
+        console.log(fullData);
+        console.log(fullData.login);
+        let div = document.createElement("div");
+        let text = document.createTextNode("User : "+fullData.login);
+        div.appendChild(text);
+        document.body.appendChild(div);
+    }
+);
+*/
+
+
+
+
+
+
+//----Promise all, all settled, and race----//
+
+
+/*
+const firstPromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("I am first Promise");
+    },5000);
+});
+const secondPromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("I am second Promise");
+    },1000);
+});
+const thirdPromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject("I am third Promise");
+    },2000);
+});
+
+Promise.all([firstPromise,secondPromise,thirdPromise]).then(
+    (resolvedValues)=>console.log(resolvedValues),
+    (rejectedValues)=>console.log(rejectedValues)
+);
+Promise.allSettled([firstPromise,secondPromise,thirdPromise]).then(
+    (resolvedValues)=>console.log(resolvedValues),
+    (rejectedValues)=>console.log(rejectedValues)
+);
+Promise.race([firstPromise,secondPromise,thirdPromise]).then(
+    (resolvedValues)=>console.log(resolvedValues),
+    (rejectedValues)=>console.log(rejectedValues)
+);
+*/
+
+
+
+
+//----Async, and training----//
+
+
+// function getData(){
+//     return new Promise((res,rej)=>{
+//         let users = ["Osama","Ahmed","Sayed"];
+//         if(users.length > 0){
+//             res("There are users");
+//         }else{
+//             rej("No users");
+//         }
+//     });
+// }
+
+// getData().then(
+//     (resolve)=>console.log(resolve),
+//     (reject)=>console.log(reject)
+// );
+
+// function getData(){
+
+//     let users = ["Osama","Ahmed","Sayed"];
+//     if(users.length > 0){
+//         return Promise.resolve("Found users");
+//     }else{
+//         return Promise.reject("No users found");
+//     }
+// }
+
+// getData().then(
+//     (resolve)=>console.log(resolve),
+//     (reject)=>console.log(reject)
+// );
+
+/*
+async function getData(){
+
+    let users = ["Osama","Ahmed","Sayed"];
+    if(users.length > 0){
+        return "Users Found async";
+    }else{
+        throw new Error("No users found async");
+    }
+}
+
+getData().then(
+    (resolved)=>console.log(resolved),
+    (rejected)=>console.log(rejected)
+);
+*/
+
+
+
+
+
+
+
+//----Await, and training----//
+
+/*
+const myPromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject(Error("I am a bad promise"));
+    },3000);
+});
+
+async function readData(){
+    console.log("Before Promise");
+    console.log(await myPromise.catch((err)=>err));
+    console.log("After promise");
+}
+
+readData();
+*/
+
+
+
+
+
+//----Try, catch, and finally with fetch----//
+
+
+// const myPromise = new Promise((res,rej)=>{
+//     setTimeout(()=>{
+//         rej("I am a bad promise");
+//     },1000);
+// });
+
+// async function readData(){
+//     console.log("Before Promise");
+//     try{
+//         console.log(await myPromise);
+//     }catch(reason){
+//         console.log("Reason : "+reason);
+//     }finally{
+//         console.log("After promise");
+//     }
+// }
+
+
+/*
+async function fetchData(){
+    console.log("Before Fetch");
+    try{
+        let myData =  await fetch("https://api.github.com/users/KareemEldeen2416");
+        console.log( await myData.json());
+    }catch(reason){
+        console.log("Reason : "+reason);
+    }finally{
+        console.log("After Fetch");
+    }
+}
+
+fetchData();
+*/
+
+
+
+
+///////////////////////END//////////////////
+
+
