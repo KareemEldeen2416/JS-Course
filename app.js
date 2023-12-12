@@ -3417,5 +3417,10 @@ fetchData();
 
 
 ///////////////////////END//////////////////
-
+function p (){
+    console.log(answer);
+    var answer = 1;
+};
+p();
+p();
 
